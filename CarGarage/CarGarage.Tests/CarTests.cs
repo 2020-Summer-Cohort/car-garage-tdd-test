@@ -4,14 +4,24 @@ using Xunit;
 namespace CarGarage.Tests
 {
     public class CarTests
+
     {
+        //Car sut = new Car();
+        
+
         [Fact]
         public void shouldAccelerate()
-        {   
+        {
             // Tests Accelerate() method in Car increases Speed
             // Arrange
+            //int currentSpeed = 50;
+            Car sut = new Car();
+
             // Act
+            sut.Accelerate();
+
             // Assert
+            Assert.Equal(15, sut.Speed);
         }
 
         [Fact]

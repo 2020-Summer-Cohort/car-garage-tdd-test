@@ -4,7 +4,13 @@ using System.Text;
 
 namespace CarGarage
 {
-    class Car
+    public class Car
     {
+        public int Speed { get; set;}
+        public void Accelerate()
+        {
+            Speed = Speed + 15;
+        }
+
     }
 }
