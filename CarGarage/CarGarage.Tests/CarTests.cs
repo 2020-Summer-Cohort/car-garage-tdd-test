@@ -1,3 +1,4 @@
+using Microsoft.VisualStudio.TestPlatform.ObjectModel.Utilities;
 using System;
 using Xunit;
 
@@ -6,7 +7,7 @@ namespace CarGarage.Tests
     public class CarTests
 
     {
-        //Car sut = new Car();
+        Car sut = new Car();
         
 
         [Fact]
@@ -15,7 +16,7 @@ namespace CarGarage.Tests
             // Tests Accelerate() method in Car increases Speed
             // Arrange
             //int currentSpeed = 50;
-            Car sut = new Car();
+            //Car sut = new Car();
 
             // Act
             sut.Accelerate();
@@ -29,8 +30,12 @@ namespace CarGarage.Tests
         {
             // Tests Accelerate() method reduces Fuel amount
             // Arrange
+            //Car sut = new Car();
+            int currentFuelLevel = sut.Fuel;
             // Act
+            sut.Drive();
             // Assert
+            Assert.Equal(currentFuelLevel - 23, sut.Fuel);
         }
 
         [Fact]
@@ -38,8 +43,12 @@ namespace CarGarage.Tests
         {
             // Tests AddFuel() method increases Fuel amount
             // Arrange
+            //Car sut = new Car();
+            int currentFuelLevel = sut.Fuel;
             // Act
+            sut.AddFuel();
             // Assert
+            Assert.Equal(currentFuelLevel + 23, sut.Fuel);
         }
 
         [Fact]
@@ -47,8 +56,13 @@ namespace CarGarage.Tests
         {
             // Tests Brake() method in Car reduces Speed amount
             // Arrange
+            int currentSpeed = sut.Speed;
+            
             // Act
+            sut.Brake();
+
             // Assert
+            Assert.Equal(currentSpeed - 7, sut.Speed);
         }
 
         [Fact]
