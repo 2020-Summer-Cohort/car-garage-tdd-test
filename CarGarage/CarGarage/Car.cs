@@ -12,6 +12,7 @@ namespace CarGarage
         }
         public int Speed { get; set;}
         public int Fuel { get; set; }
+        public bool CarRunning { get; set; }
         public void Accelerate()
         {
             Speed = Speed + 15;
@@ -27,6 +28,14 @@ namespace CarGarage
         public void Brake()
         {
             Speed = Speed - 7;
+        }
+        public void ToggleIgnition()
+        {
+            if (CarRunning == true)
+            {
+                CarRunning = false;
+            }
+            else { CarRunning = true; }
         }
     }
 }

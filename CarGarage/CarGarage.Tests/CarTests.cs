@@ -70,8 +70,11 @@ namespace CarGarage.Tests
         {
             // Tests ToggleEngine() method starts car when its off
             // Arrange
+            sut.CarRunning = false;
             // Act
+            sut.ToggleIgnition();
             // Assert
+            Assert.True(sut.CarRunning = true);
         }
 
         [Fact]
@@ -79,8 +82,12 @@ namespace CarGarage.Tests
         {
             // Tests ToggleEngine() method turns car off when its on
             // Arrange
+            sut.CarRunning = true;
             // Act
+            sut.ToggleIgnition();
             // Assert
+            // Assert.True(sut.CarRunning = false);
+            Assert.False(sut.CarRunning = false);
         }
     }
 }
